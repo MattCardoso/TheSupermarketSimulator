@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 
 public class marketClientController 
 {
-	@FXML		//Componentes do Client
+	@FXML	
 	TextField ClientName_TextField, ClientAddress_TextField, ClientPhone_TextField, ClientMail_TextField, 
 				ClientID_TextField, ClientPassword_TextField, ClientQuantity_TextField;
 	
@@ -20,5 +20,25 @@ public class marketClientController
 	
 	@FXML
 	ListView<?> ClientListProducts_ListView;
+	
+	@FXML
+	private void initialize()
+	{
+		ClientCadastrar_Button.setOnAction((event) -> {
+			System.out.println("OLAR, SOU O BOTÃO DE CADASTRO");
+		});
+		
+		ClientAddToCar_Button.setOnAction((event) -> {
+			System.out.println("OLAR, SOU O BOTÃO DE ADICIONAR AO CARRINHO");
+		});
+		
+		ClientOrder_Button.setOnAction((event) -> {
+			System.out.println("OLAR, SOU O BOTÃO DE FINALIZAR COMPRA");
+		});
+		
+		ClientListProducts_Button.setOnAction((event) -> {
+			System.out.println("OLAR, SOU O BOTÃO DE LISTAR PRODUTOS");
+		});
+	}
 	
 }
