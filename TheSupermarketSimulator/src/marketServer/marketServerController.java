@@ -17,4 +17,16 @@ public class marketServerController
 	@FXML
 	ListView<?> ServerListStorage_ListView, ServerStorageProd_ListView, ServerSoldOutProd_ListView;
 	
+	@FXML
+	private void initialize()
+	{
+		ServerCadastrar_Button.setOnAction((event) -> {
+			System.out.println("OLAR, SOU O BOTÃO DE CADASTRO");
+		});
+		
+		ServerSaveQty_Button.setOnAction((event) -> {
+			System.out.println("OLAR, SOU O BOTÃO DE SALVAR QUANTIDADE");
+		});
+	}
+	
 }
