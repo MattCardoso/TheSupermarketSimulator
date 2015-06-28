@@ -1,4 +1,4 @@
-package marketProduct;
+package marketCommon.product;
 
 public class Product {
 	private String 	_name;
@@ -18,9 +18,20 @@ public class Product {
 		this._qntt = Integer.parseInt(values[4]);
 	}
 	
+	//Construtor padrao 
+	public Product(String name, int price, String provider, String cbb, int qntt) {
+		this.setName(name);
+		this.setPrice(price);
+		this.setProvider(provider);
+		this.setCbb(cbb);
+		this.setQuantity(qntt);
+	}
 	
+	public String toString(){
+		return "" + _name + "," + _price + "," + _provider + "," + _cbb + "," + _qntt; 
+	}
 	
-	
+	// Getters e Setters 
 	public int getQuantity(){return this._qntt;}
 	public void setQuantity(int qntt){ this._qntt = qntt;}
 	
@@ -35,10 +46,5 @@ public class Product {
 	
 	public String getCbb(){return this._cbb;}
 	public void setCbb(String date){this._cbb = date;}
-	
-	
-	
-	public String toString(){
-		return "" + _name + "," + _price + "," + _provider + "," + _cbb + "," + _qntt; 
-	}
+
 }

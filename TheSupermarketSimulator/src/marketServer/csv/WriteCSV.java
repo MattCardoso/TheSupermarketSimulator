@@ -5,8 +5,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import marketProduct.Product;
-import marketUser.User;
+import marketCommon.product.Product;
+import marketCommon.user.User;
 
 public class WriteCSV {
 

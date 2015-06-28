@@ -1,4 +1,4 @@
-package marketUser;
+package marketCommon.user;
 
 public class User {
 	private String _name;
@@ -17,6 +17,17 @@ public class User {
 		this.setEmail(values[3]);
 		this.setID(values[4]);
 		this.setPassword(values[5]);
+	}
+
+	public User(String name, String address, String phone, String email,
+			String id, String pw) {
+		this.setName(name);
+		this.setAddress(address);
+		this.setEmail(email);
+		this.setPhone(phone);
+		this.setID(id);
+		this.setPassword(pw);
+		
 	}
 
 	public String getName() 					{return _name;}

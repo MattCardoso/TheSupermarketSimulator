@@ -5,9 +5,9 @@ package marketServer.model;
 
 import java.util.ArrayList;
 
-import marketProduct.Product;
+import marketCommon.product.Product;
+import marketCommon.user.User;
 import marketServer.csv.ReadCSV;
-import marketUser.User;
 
 /**
  * @author Mateus

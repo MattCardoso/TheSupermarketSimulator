@@ -8,8 +8,10 @@ import java.util.ArrayList;
 //import java.util.List;
 
 
-import marketProduct.Product;
-import marketUser.User;
+
+
+import marketCommon.product.Product;
+import marketCommon.user.User;
 
 
 
