@@ -21,7 +21,7 @@ public class ReadCSV {
 		
 		try
 		{
-			BufferedReader br = new BufferedReader(new FileReader("src/marketCSV/data/marketUsers.csv"));
+			BufferedReader br = new BufferedReader(new FileReader("src/marketServer/csv/data/marketUsers.csv"));
 	        String data;
 	        while((data = br.readLine()) != null) 
 	            list.add(new User(data));
@@ -41,7 +41,7 @@ public class ReadCSV {
 		
 		try
 		{
-			BufferedReader br = new BufferedReader(new FileReader("src/marketCSV/data/marketProducts.csv"));
+			BufferedReader br = new BufferedReader(new FileReader("src/marketServer/csv/data/marketProducts.csv"));
 	        String data;
 	        while((data = br.readLine()) != null)
 	           	list.add(new Product(data));

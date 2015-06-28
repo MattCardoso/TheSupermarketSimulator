@@ -19,7 +19,7 @@ public class WriteCSV {
 	{
 		try
 		{
-			FileWriter fw = new FileWriter("src/marketCSV/data/marketUsers.csv");
+			FileWriter fw = new FileWriter("src/marketServer/csv/data/marketUsers.csv");
 			for(User us : list)
 			{
 				fw.append(us.toString());
@@ -37,7 +37,7 @@ public class WriteCSV {
 	{
 		try
 		{
-			FileWriter fw = new FileWriter("src/marketCSV/data/marketProducts.csv");
+			FileWriter fw = new FileWriter("src/marketServer/csv/data/marketProducts.csv");
 			for(Product pr : list)
 			{
 				fw.append(pr.toString());
