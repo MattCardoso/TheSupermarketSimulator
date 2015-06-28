@@ -15,7 +15,7 @@ import marketUser.User;
 
 public class ReadCSV {
 
-	public static ArrayList<User> ReadCSVBook()
+	public static ArrayList<User> ReadCSVUsers()
 	{
 		ArrayList<User> list = new ArrayList<User>();
 		
@@ -35,7 +35,7 @@ public class ReadCSV {
 	
 
 	
-	public static ArrayList<Product> ReadCSVUsers()
+	public static ArrayList<Product> ReadCSVProducts()
 	{
 		ArrayList<Product> list = new ArrayList<Product>();
 		
