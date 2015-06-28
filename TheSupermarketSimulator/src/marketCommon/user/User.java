@@ -19,6 +19,7 @@ public class User {
 		this.setPassword(values[5]);
 	}
 
+	//Construtor padrao
 	public User(String name, String address, String phone, String email,
 			String id, String pw) {
 		this.setName(name);
@@ -29,7 +30,13 @@ public class User {
 		this.setPassword(pw);
 		
 	}
-
+	
+	public String toString(){
+		return "" + _name + "," + _address + "," + _phone + "," + _email +
+				"," + _id + "," + _password;
+	}
+	
+	// Getters and setters
 	public String getName() 					{return _name;}
 	public void setName(String _name)			{this._name = _name;}
 
@@ -47,10 +54,5 @@ public class User {
 
 	public String getPassword() 				{return _password;}
 	public void setPassword(String _password) 	{this._password = _password;}
-	
-//	public String toString(){
-//		return "" + _name + "," + _address + "," + _phone + "," + _email +
-//				"," + _id + "," + _password; // + "," _quantity; 
-//	}
 	
 }

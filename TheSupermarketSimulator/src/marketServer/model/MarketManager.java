@@ -24,20 +24,20 @@ public class MarketManager {
 		this._users 	= ReadCSV.ReadCSVUsers();
 	}
 	
-	public void add(Product p)	{_products.add(p);}
-	public void add(User u)		{_users.add(u);}
+	public synchronized void add(Product p)		{_products.add(p);}
+	public synchronized void add(User u)		{_users.add(u);}
 	
-	public void updateQuantity(String prodName, int newQntt){
+	public synchronized void updateQuantity(String prodName, int newQntt){
 		for (Product prod : _products) 
 			if(prod.getName().equals(prodName))
 				prod.setQuantity(newQntt);
 	}
 	
-	public ArrayList<Product> getProductList()	{return this._products;}
-	public ArrayList<User> getUserList()		{return this._users;}
+	public synchronized ArrayList<Product> getProductList()	{return this._products;}
+	public synchronized ArrayList<User> getUserList()		{return this._users;}
 	
 	
-	public Product getProduct(String pname){
+	public synchronized Product getProduct(String pname){
 		Product ret = null;
 		for (Product prd : _products) 
 			if(prd.getName().equals(pname))
@@ -45,7 +45,7 @@ public class MarketManager {
 		return ret;
 	}
 	
-	public User getUser(String uname){
+	public synchronized User getUser(String uname){
 		User ret = null;
 		for (User usr : _users) {
 			if(usr.getName().equals(uname))

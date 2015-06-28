@@ -32,19 +32,19 @@ public class Product {
 	}
 	
 	// Getters e Setters 
-	public int getQuantity(){return this._qntt;}
-	public void setQuantity(int qntt){ this._qntt = qntt;}
+	public int getQuantity()					{return this._qntt;}
+	public void setQuantity(int qntt)			{ this._qntt = qntt;}
 	
-	public int getPrice(){return _price;}
-	public void setPrice(int price){this._price = price;}
+	public int getPrice()						{return _price;}
+	public void setPrice(int price)				{this._price = price;}
 	
-	public String getName(){return this._name;}
-	public void setName(String name){this._name = name;}
+	public String getName()						{return this._name;}
+	public void setName(String name)			{this._name = name;}
 	
-	public String getProvider(){return this._provider;}
-	public void setProvider(String provider){this._provider = provider;}
+	public String getProvider()					{return this._provider;}
+	public void setProvider(String provider)	{this._provider = provider;}
 	
-	public String getCbb(){return this._cbb;}
-	public void setCbb(String date){this._cbb = date;}
+	public String getCbb()						{return this._cbb;}
+	public void setCbb(String date)				{this._cbb = date;}
 
 }
