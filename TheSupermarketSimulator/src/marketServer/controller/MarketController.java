@@ -1,6 +1,6 @@
 package marketServer.controller;
 
-import marketCommon.MarketConstants;
+import marketCommon.Constants;
 import marketCommon.product.Product;
 import marketCommon.user.User;
 import marketServer.model.MarketManager;
@@ -18,9 +18,11 @@ public class MarketController {
 	}
 	
 	public int addUser(String name, String address, String phone, String email, String id, String pw){
-		int ret = MarketConstants.SUCCESS;
+		int ret = Constants.SUCCESS;
 		if(_manager.getUserList().stream().anyMatch(p -> p.getID().equals(id)))
-			ret = MarketConstants.ERROR_SAME_ID;
+			ret = Constants.ERROR_SAME_ID;
+		else if(_manager.getUserList().stream().anyMatch(u -> u.getEmail().equals(email)))
+			ret = Constants.ERROR_SAME_EMAIL;
 		else
 			_manager.add(new User(name,address,phone,email,id,pw));
 		
@@ -28,10 +30,10 @@ public class MarketController {
 	}
 	
 	public int addProduct(String name, int price, String provider, String cbb, int qntt){
-		int ret = MarketConstants.SUCCESS;
+		int ret = Constants.SUCCESS;
 		
 		if(_manager.getProductList().stream().anyMatch(p -> p.getName().equals(name)))
-			ret = MarketConstants.ERROR_SAME_NAME;
+			ret = Constants.ERROR_SAME_NAME;
 		else
 			_manager.add(new Product(name, price, provider, cbb, qntt));
 		
