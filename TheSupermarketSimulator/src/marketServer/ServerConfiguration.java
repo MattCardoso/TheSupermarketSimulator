@@ -1,21 +1,36 @@
 package marketServer;
 
 import java.io.IOException;
+import java.io.PrintStream;
 import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
 
-public class ServerConfiguration 
+public class ServerConfiguration
 {	
-	public void InitializeServer()
+	static ArrayList<PrintStream> _psClients;
+	static ServerSocket server;
+
+	public static void main(String[] args) throws IOException
 	{
-		try
+		server = new ServerSocket(12345);
+		System.out.println("Porta do servidor aberta em 12345!");
+
+		while(true)
 		{
-			ServerSocket servidor = new ServerSocket(12345);
-	
-		}
-		catch(IOException ex)
-		{
+			Socket client = server.accept();
+			System.out.println("Conexão aceita!!!");
 			
+			ServerThread st = new ServerThread(client);
+			
+			Thread t = new Thread(st);
+
+			t.start();
 		}
 	}
-
+	
+	public void CloseServer() throws IOException
+	{
+		server.close();
+	}
 }
