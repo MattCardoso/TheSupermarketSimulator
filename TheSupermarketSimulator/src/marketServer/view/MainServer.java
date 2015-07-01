@@ -1,4 +1,4 @@
-package marketServer;
+package marketServer.view;
 
 import java.io.IOException;
 import javafx.application.Application;

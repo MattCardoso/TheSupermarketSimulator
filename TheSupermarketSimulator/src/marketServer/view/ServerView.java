@@ -1,11 +1,11 @@
-package marketServer;
+package marketServer.view;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
-public class marketServerController 
+public class ServerView 
 {
 	@FXML
 	TextField ServerProdName_TextField, ServerProdPrice_TextField, ServerProdBestBef_TextField, 
