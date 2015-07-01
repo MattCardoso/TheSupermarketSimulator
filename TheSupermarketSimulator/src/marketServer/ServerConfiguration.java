@@ -13,6 +13,7 @@ public class ServerConfiguration
 
 	public static void main(String[] args) throws IOException
 	{
+		_psClients = new ArrayList<PrintStream>();
 		server = new ServerSocket(12345);
 		System.out.println("Porta do servidor aberta em 12345!");
 
@@ -26,6 +27,8 @@ public class ServerConfiguration
 			Thread t = new Thread(st);
 
 			t.start();
+			
+			_psClients.add(new PrintStream(client.getOutputStream()));
 		}
 	}
 	
