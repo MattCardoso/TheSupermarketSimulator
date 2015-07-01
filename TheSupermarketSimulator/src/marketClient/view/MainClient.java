@@ -28,8 +28,9 @@ public class MainClient extends Application {
 	}
 
 	public static void main(String[] args) {
+		
 		launch(args);
-		//Main TODO here.
+		
 	}
 	
 	public MainClient()
