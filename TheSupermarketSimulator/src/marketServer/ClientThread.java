@@ -30,6 +30,7 @@ public class ClientThread implements Runnable
 		socketServer.close();
 	}
 	
+	@SuppressWarnings("unchecked")
 	public void PrintStorageList() throws ClassNotFoundException, IOException
 	{
 		ArrayList<String> ls = new ArrayList<String>();
