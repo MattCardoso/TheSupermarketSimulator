@@ -9,8 +9,8 @@ import java.util.ArrayList;
 
 public class ClientThread implements Runnable
 {
-	private ObjectInputStream inFromServer;
 	private static Socket socketServer;
+	private ObjectInputStream inFromServer;
 	private ObjectOutputStream outToServer; 
 	
 	public ClientThread(Socket client) throws UnknownHostException, IOException
