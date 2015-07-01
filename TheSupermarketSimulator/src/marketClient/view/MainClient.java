@@ -1,5 +1,6 @@
-package marketClient;
+package marketClient.view;
 
+import marketClient.view.*;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +17,7 @@ public class MainClient extends Application {
 		primaryStage.setTitle("T H E * S U P E R M A R K E T * S I M U L A T O R");
 		
 		try {
-			FXMLLoader loader = new FXMLLoader(MainClient.class.getResource("marketClient.fxml"));
+			FXMLLoader loader = new FXMLLoader(MainClient.class.getResource("ClientView.fxml"));
 			AnchorPane page = (AnchorPane) loader.load();
 			Scene scene = new Scene(page);
 			primaryStage.setScene(scene);
