@@ -22,6 +22,8 @@ public class ServerView
 	{
 		ServerCadastrar_Button.setOnAction((event) -> {
 			System.out.println("OLAR, SOU O BOTÃO DE CADASTRO");
+			System.out.println(ServerProdName_TextField.getText() +" "+ ServerProdPrice_TextField.getText()
+					+ " " + ServerProdSuplier_TextField.getText());
 		});
 		
 		ServerSaveQty_Button.setOnAction((event) -> {

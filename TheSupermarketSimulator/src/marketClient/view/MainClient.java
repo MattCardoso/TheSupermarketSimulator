@@ -1,5 +1,6 @@
 package marketClient.view;
 
+
 import marketClient.view.*;
 
 import java.io.IOException;
@@ -37,14 +38,14 @@ public class MainClient extends Application {
 	}
 
 	public static void main(String[] args) {
-		try {
-			conexao = new Socket("127.0.0.1", 12345);
+//		try {
+//			conexao = new Socket("127.0.0.1", 12345);
 //	        inFromServer = new ObjectInputStream(conexao.getInputStream());
 //	        outToServer = new ObjectOutputStream(conexao.getOutputStream());
-		} catch (IOException e) {
-			System.out.println("Erro ao conectar com o servidor");
-			e.printStackTrace();
-		}
+//		} catch (IOException e) {
+//			System.out.println("Erro ao conectar com o servidor");
+//			e.printStackTrace();
+//		}
 		launch(args);
 		
 	}
