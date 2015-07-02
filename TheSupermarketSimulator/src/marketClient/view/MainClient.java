@@ -2,11 +2,15 @@ package marketClient.view;
 
 
 import marketClient.view.*;
+import marketCommon.User;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.net.UnknownHostException;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -18,8 +22,8 @@ import javafx.stage.Stage;
 public class MainClient extends Application {
 	
 	static Socket conexao;
-	static ObjectInputStream inFromServer;
-	static ObjectOutputStream outToServer;
+//	static ObjectInputStream inFromServer;
+//	static ObjectOutputStream outToServer;
 	static String host,port;
 	
 	@Override
@@ -39,6 +43,30 @@ public class MainClient extends Application {
 	}
 
 	public static void main(String[] args) {
+		
+		
+		String[] hostpath = new String[2];
+		try{
+			BufferedReader br = new BufferedReader(new FileReader("src/marketClient/view/hostpath.txt"));
+	        hostpath = br.readLine().split(":");
+//	        System.out.println("[0] - "+ hostpath[0] +" [1] - "+ hostpath[1]);
+	        br.close();
+		}catch(IOException ex){}
+		
+		try {
+			conexao =  new Socket(hostpath[0],Integer.parseInt(hostpath[1]));
+		} catch (NumberFormatException e) {
+			System.out.println("Erro para conectar no server");
+			e.printStackTrace();
+		} catch (UnknownHostException e) {
+			System.out.println("Erro para conectar no server");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("Erro para conectar no server");
+			e.printStackTrace();
+		}
+		
+		
 		launch(args);
 			
 

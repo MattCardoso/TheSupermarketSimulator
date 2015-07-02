@@ -3,8 +3,8 @@ package marketServer.view;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import marketCommon.product.Product;
-import marketCommon.user.User;
+import marketCommon.Product;
+import marketCommon.User;
 import marketServer.ServerConfiguration;
 import marketServer.controller.MarketController;
 import javafx.application.Application;

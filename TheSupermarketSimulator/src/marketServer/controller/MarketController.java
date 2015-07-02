@@ -3,8 +3,8 @@ package marketServer.controller;
 import java.util.ArrayList;
 
 import marketCommon.Constants;
-import marketCommon.product.Product;
-import marketCommon.user.User;
+import marketCommon.Product;
+import marketCommon.User;
 import marketServer.model.MarketManager;
 
 /**

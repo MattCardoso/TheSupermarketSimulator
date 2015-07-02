@@ -1,4 +1,4 @@
-package marketCommon.product;
+package marketCommon;
 
 public class Product {
 	private String 	_name;

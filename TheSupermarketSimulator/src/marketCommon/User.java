@@ -1,4 +1,4 @@
-package marketCommon.user;
+package marketCommon;
 
 public class User {
 	private String _name;

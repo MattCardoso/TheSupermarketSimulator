@@ -6,7 +6,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.ArrayList;
 
-import marketCommon.product.Product;
+import marketCommon.Product;
 import marketServer.controller.MarketController;
 
 public class ServerThread implements Runnable 
