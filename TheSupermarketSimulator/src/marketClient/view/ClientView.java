@@ -1,8 +1,14 @@
 package marketClient.view;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+
+
 import javafx.beans.value.ChangeListener;
 import marketClient.controller.ClientController;
-
+import marketServer.controller.MarketController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
@@ -30,10 +36,14 @@ public class ClientView
 	@FXML
 	Tab ClientCadastro_Tab, ClientBuyProd_Tab, ClientListProd_Tab, ClientLogin_Tab;
 	
+	ClientController _control;
+	
 	@FXML
 	private void initialize()
 	{
-
+		
+		
+		
 		ClientCadastro_Tab.setDisable(true);
 		ClientBuyProd_Tab.setDisable(true);
 		ClientListProd_Tab.setDisable(true);
@@ -70,7 +80,22 @@ public class ClientView
 		
 		ClientLogin_Button.setOnAction((event) -> {
 			System.out.println("OLAR, SOU O BOTÃO DE LOGIN");
-			
+			String user = ClientID_TextField.getText();
+			String pw = ClientPassword_TextField.getText();
+			MainClient.host = ClientIP_TextField.getText();
+			MainClient.port = ClientPort_TextField.getText();
+			int resp =-19000;
+			try {
+				MainClient.conexao = new Socket(MainClient.host, Integer.parseInt(MainClient.port));
+				MainClient.inFromServer = new ObjectInputStream(MainClient.conexao.getInputStream());
+				MainClient.outToServer = new ObjectOutputStream(MainClient.conexao.getOutputStream());
+				this._control = new ClientController(MainClient.conexao);
+			} catch (IOException e) {
+				System.out.println("Erro ao conectar com o servidor");
+				e.printStackTrace();
+			}
+			resp = _control.checkUser(user, pw);
+			System.out.println(resp + "PORRRRAAAAAAAAAAAAAAA");
 			//Se o login for bem sucedido
 			ClientCadastro_Tab.setDisable(false);
 			ClientBuyProd_Tab.setDisable(false);

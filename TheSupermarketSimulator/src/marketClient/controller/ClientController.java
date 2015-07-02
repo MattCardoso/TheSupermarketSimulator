@@ -18,8 +18,8 @@ public class ClientController {
 		 this._manager = new ClientManager(sock);
 	}
 	
-	public int checkUser(String id, String pw, String email){
-		return _manager.checkUser( id,  pw,  email);
+	public int checkUser(String id, String pw){
+		return _manager.checkUser( id,  pw);
 	}
 	
 	public int addUser(String name, String address, String phone, 

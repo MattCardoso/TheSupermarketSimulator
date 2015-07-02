@@ -37,9 +37,9 @@ public class ClientManager {
 	}
 	
 	// Metodo se comunica com o MarketController.checkUser()
-	public int checkUser(String id, String pw, String email){
+	public int checkUser(String id, String pw){
 		int ret = Constants.SUCCESS;
-		SendObject("checkUser," + id + "," + pw + "," + email);
+		SendObject("checkUser," + id + "," + pw );
 		
 		try {
 			ret = (Integer) _inFromServer.readInt();
