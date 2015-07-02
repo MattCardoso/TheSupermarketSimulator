@@ -1,6 +1,13 @@
 package marketClient.view;
 
+
+import marketClient.view.*;
+
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,6 +16,10 @@ import javafx.stage.Stage;
 
 
 public class MainClient extends Application {
+	
+	static Socket conexao;
+//	static ObjectInputStream inFromServer;
+//	static ObjectOutputStream outToServer;
 	
 	@Override
 	public void start(Stage primaryStage) 
@@ -27,8 +38,16 @@ public class MainClient extends Application {
 	}
 
 	public static void main(String[] args) {
+		try {
+			conexao = new Socket("127.0.0.1", 12345);
+//	        inFromServer = new ObjectInputStream(conexao.getInputStream());
+//	        outToServer = new ObjectOutputStream(conexao.getOutputStream());
+		} catch (IOException e) {
+			System.out.println("Erro ao conectar com o servidor");
+			e.printStackTrace();
+		}
 		launch(args);
-		//Main TODO here.
+		
 	}
 	
 	public MainClient()

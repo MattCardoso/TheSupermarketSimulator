@@ -1,5 +1,7 @@
 package marketServer.controller;
 
+import java.util.ArrayList;
+
 import marketCommon.Constants;
 import marketCommon.product.Product;
 import marketCommon.user.User;
@@ -17,6 +19,11 @@ public class MarketController {
 		this._manager = new MarketManager();
 	}
 	
+	public int checkUser(String user, String pw){
+		int ret = Constants.SUCCESS;
+		return ret;
+	}
+
 	public int addUser(String name, String address, String phone, String email, String id, String pw){
 		int ret = Constants.SUCCESS;
 		if(_manager.getUserList().stream().anyMatch(p -> p.getID().equals(id)))
@@ -40,5 +47,9 @@ public class MarketController {
 		return ret;
 	}
 	
+	
+	public ArrayList<Product> getAllProductList(){
+		return _manager.getProductList();
+	}
 	
 }

@@ -19,6 +19,7 @@ public class MarketManager {
 	private ArrayList<User>		_users;
 	
 	
+	
 	public MarketManager(){
 		this._products 	= ReadCSV.ReadCSVProducts();
 		this._users 	= ReadCSV.ReadCSVUsers();
@@ -36,6 +37,14 @@ public class MarketManager {
 	public synchronized ArrayList<Product> getProductList()	{return this._products;}
 	public synchronized ArrayList<User> getUserList()		{return this._users;}
 	
+	
+	public synchronized String[] getAllProducts(){
+		String[] ret = new String[_products.size()];
+		for (int i = 0 ; i < _products.size(); i++) {
+			ret[i] = _products.get(i).toString();
+		}
+		return ret;
+	}
 	
 	public synchronized Product getProduct(String pname){
 		Product ret = null;

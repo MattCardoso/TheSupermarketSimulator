@@ -1,6 +1,8 @@
 package marketClient.view;
 
 import javafx.beans.value.ChangeListener;
+import marketClient.controller.ClientController;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
@@ -13,11 +15,11 @@ public class ClientView
 	@FXML	
 	TextField ClientName_TextField, ClientAddress_TextField, ClientPhone_TextField, ClientMail_TextField, 
 				ClientID_TextField, ClientPassword_TextField, ClientQuantity_TextField, ClientUserLogin_TextField, 
-				ClientPasswordLogin_TextField;
+				ClientPasswordLogin_TextField, ClientIP_TextField, ClientPort_TextField;
 	
 	@FXML
 	Button ClientCadastrar_Button, ClientAddToCar_Button, ClientOrder_Button, ClientListProducts_Button, 
-		ClientLogin_Button;
+			ClientLogin_Button;
 	
 	@FXML
 	TextArea ClientItensToBy_TextArea, ClientItensAdded_TextArea;
@@ -31,6 +33,7 @@ public class ClientView
 	@FXML
 	private void initialize()
 	{
+
 		ClientCadastro_Tab.setDisable(true);
 		ClientBuyProd_Tab.setDisable(true);
 		ClientListProd_Tab.setDisable(true);
@@ -38,9 +41,18 @@ public class ClientView
 		
 		ClientItensToBy_TextArea.setEditable(false);
 	//	ClientItensAdded_TextArea.setEditable(false);
-		
+
+	//	ClientController ctrl = new ClientController(MainClient.conexao);
+		int ProtocolMessage = -1000;
+
 		ClientCadastrar_Button.setOnAction((event) -> {
 			System.out.println("OLAR, SOU O BOTÃO DE CADASTRO");
+			int ret = 100000;
+	//		ret = ctrl.addUser(ClientName_TextField.getText(), ClientAddress_TextField.getText(),
+		//			ClientPhone_TextField.getText(),ClientMail_TextField.getText(),
+			//				ClientID_TextField.getText(), ClientPassword_TextField.getText());
+			System.out.println("Erro: "+ ret);
+			
 		});
 		
 		ClientAddToCar_Button.setOnAction((event) -> {
@@ -49,6 +61,7 @@ public class ClientView
 		
 		ClientOrder_Button.setOnAction((event) -> {
 			System.out.println("OLAR, SOU O BOTÃO DE FINALIZAR COMPRA");
+			
 		});
 		
 		ClientListProducts_Button.setOnAction((event) -> {

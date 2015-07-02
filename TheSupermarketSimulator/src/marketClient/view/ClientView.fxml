@@ -16,10 +16,14 @@
                      <children>
                         <VBox alignment="CENTER" prefHeight="567.0" prefWidth="600.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <Label text="Usuario" />
+                              <Label text="Usuario:" />
                               <TextField fx:id="ClientUserLogin_TextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="300.0" />
-                              <Label text="Senha" />
+                              <Label text="Senha:" />
                               <TextField fx:id="ClientPasswordLogin_TextField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="200.0" />
+                              <Label layoutX="285.0" layoutY="221.0" text="IP:" />
+                              <TextField fx:id="ClientIP_TextField" layoutX="210.0" layoutY="294.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="150.0" />
+                              <Label layoutX="285.0" layoutY="311.0" text="Porta:" />
+                              <TextField fx:id="ClientPort_TextField" layoutX="210.0" layoutY="324.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="70.0" />
                               <Button fx:id="ClientLogin_Button" mnemonicParsing="false" text="Entrar" />
                            </children>
                         </VBox>
